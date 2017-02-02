@@ -5,19 +5,21 @@
     android:id="@+id/rightLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/pic"
     android:orientation="vertical" >
 
     <LinearLayout
         android:id="@+id/lay1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.5">
+        android:layout_weight="1.72"
+        android:weightSum="1">
 
         <Button
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
+            android:layout_width="143dp"
             android:layout_height="wrap_content"
-            android:text="Scan Devices"
+            android:text="List Paired Bluetooth Devices"
             android:onClick="scanDevices"
             android:id="@+id/scan" />
 
@@ -26,26 +28,33 @@
             android:layout_height="160dp"
             android:id="@+id/listView" />
 
+        <!--  <EditText
+              android:layout_width="1dp"
+              android:layout_height="wrap_content"
+              android:id="@+id/editText"
+              android:layout_weight="1.50" /> -->
+
+
         <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
+            android:layout_width="134dp"
             android:layout_height="wrap_content"
-            android:text="Send"
-            android:id="@+id/send"
-            android:layout_weight="0.02" />
+            android:text="List Available Hex Files"
+            android:onClick="listBinaryFiles"
+            android:id="@+id/button" />
 
-        <EditText
-            android:layout_width="1dp"
+        <ListView
+            android:layout_width="197dp"
+            android:layout_height="80dp"
+            android:id="@+id/binListView" />
+
+<!--        <EditText
+            android:layout_width="290dp"
             android:layout_height="wrap_content"
-            android:id="@+id/editText"
-            android:layout_weight="1.50" />
+            android:hint="Enter Start Address"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:id="@+id/strtAdd"/>-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="29dp"
-            android:text="Status"
-            android:id="@+id/textView"
-            android:layout_weight="1.83" />
     </LinearLayout>
 
 
@@ -53,24 +62,25 @@
         android:id="@+id/lay3"
         android:layout_width="fill_parent"
         android:layout_height="1dip"
-        android:layout_weight="1"
+        android:layout_weight="1.70"
         android:weightSum="1"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/updateStatus"
-            android:layout_width="wrap_content"
+<!--        <EditText
+            android:layout_width="290dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="TextView" />
+            android:id="@+id/endAdd"
+            android:hint="Enter End Address"
+            android:layout_gravity="right" />-->
 
-        <ProgressBar
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="580dip"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:id="@+id/progressBar"
-            android:indeterminate="false" />
+        <Button
+             style="?android:attr/buttonStyleSmall"
+             android:layout_width="98dp"
+             android:layout_height="wrap_content"
+             android:text="Update Firmware"
+             android:id="@+id/update"
+            android:layout_gravity="right" />
+
 
     </LinearLayout>
-</LinearLayout>
+  </LinearLayout>
