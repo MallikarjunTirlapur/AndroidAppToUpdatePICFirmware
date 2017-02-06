@@ -46,6 +46,7 @@ public class ReadHexFile {
     long  picFlashEndAddress, appEndAdd;
     byte[] binDataBytes;
     LinkedHashMap<Long, String> dataAddressHashMap;
+    int NVM_PAGE_SIZE;
     /**
      * Constructor reads binary file and store data into an array of bytes
      * @param path carries the path to the binary file on the storage of the android device.
@@ -113,10 +114,11 @@ public class ReadHexFile {
      */
     public int getTotalNumberOfPackets(){
 
-        return (int)(binDataBytes.length / 64);
+        return (int)(binDataBytes.length / NVM_PAGE_SIZE);
     }
 
-    public void craeteBinData(int NVM_PAGE_SIZE){
+    public void craeteBinData(int size){
+        NVM_PAGE_SIZE = size;
         Set<Long> keys = dataAddressHashMap.keySet();
         appStrtAdd = Collections.min(keys);
 
