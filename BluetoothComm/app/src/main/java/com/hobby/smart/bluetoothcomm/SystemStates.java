@@ -77,7 +77,7 @@ public class SystemStates extends ReadHexFile {
             if(contr >= 9){
                 NVM_PAGE_SIZE = data[0];
                 setStartEndPICFlashAddress(bytesToLong(data, 5), bytesToLong(data, 1));
-                craeteBinData();
+                craeteBinData(NVM_PAGE_SIZE);
                 contr = 0;
                 flagRcvCntrlHdr = false;
                 sendData(SYS_CONFIG_CMND);
